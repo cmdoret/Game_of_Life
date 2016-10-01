@@ -1,4 +1,4 @@
-# Game_of_Life
+    # Game_of_Life
 A small game written in python we made for a school project.
 This is based on Conway's game of life, with added features:
 - Addition different colors, competing against each other.
