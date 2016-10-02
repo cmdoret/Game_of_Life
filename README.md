@@ -1,5 +1,5 @@
     # Game_of_Life
-A small game written in python we made for a school project.
+A small game written in python we wrote for a school project.
 This is based on Conway's game of life, with added features:
 - Addition different colors, competing against each other.
 - Changing the rules of birth/survival/death for each color independently
