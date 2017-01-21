@@ -1,7 +1,7 @@
-<<<<<<< HEAD
-    # Game_of_Life
+# Game_of_Life
 A small game written in python we wrote for a school project.
->>>>>>> 7ce7254c2fff8f97e83e938c19cfc0729c0c1e53
+
+
 This is based on Conway's game of life, with added features:
 - Addition different colors, competing against each other.
 - Changing the rules of birth/survival/death for each color independently
