@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-import tkinter as tk
+import Tkinter as tk
 from os import getcwd
+from os.path import join
 import random
 import ast
 
@@ -310,16 +311,16 @@ class MainWindow(tk.Frame):  # creates the main window
             # If the current iteration has not reached the desired maximum number chosen with the slider.
             if not self.ite_incre:
                 # If we are at iteration 0, we need to create the file data.txt
-                graph_file = open(str(getcwd()) + "/data.txt", 'w')
+                graph_file = open(join(getcwd(),"data.txt"), 'w')
                 graph_file.write("Iteration")
                 graph_file.close()
-                graph_file = open(str(getcwd()) + "/data.txt", 'a')
+                graph_file = open(join(getcwd(), "data.txt"), 'a')
                 # After writing "Iteration" in this data.txt, we add every name of colors in the current simulation
                 for color in range(1, len(configuration["colors"])):
                     graph_file.write(" " + str.upper(configuration["colors"][color].replace(" ", "")))
                 graph_file.write("\n")
                 graph_file.close()
-            graph_file = open(str(getcwd()) + "/data.txt", 'a')
+            graph_file = open(join(getcwd(), "data.txt"), 'a')
             graph_file.write(str(self.ite_incre + 1))
             for color in range(1, len(configuration["colors"])):
                 n = 0
@@ -508,7 +509,7 @@ class MainWindow(tk.Frame):  # creates the main window
         This method loads the seeds from the text file and stores it in the seed_store dictionary.
         """
         try:
-            seed_file = open(str(getcwd()) + "/seeds.txt", 'r')
+            seed_file = open(join(getcwd(), "seeds.txt"), 'r')
             # Tries to open the file called seeds.txt in the same directory as the program in read mode.
             seed_string = seed_file.read()
             # Reads the file content and assigns it to a variable as a string.
@@ -519,7 +520,7 @@ class MainWindow(tk.Frame):  # creates the main window
 
         except IOError:
             # Calls this method, creating a new file.
-            seed_file = open(str(getcwd()) + "/seeds.txt", 'w')
+            seed_file = open(join(getcwd(), "seeds.txt"), 'w')
             # In case there was no file called seeds.txt in the directory, a new empty file is created.
             seed_file.close()
             self.restore_seed()
@@ -531,7 +532,7 @@ class MainWindow(tk.Frame):  # creates the main window
         calls another method to rewrite the seeds.txt file from this dictionary.
         :return:
         """
-        default_file = open(str(getcwd()) + "/default.txt", 'r')
+        default_file = open(join(getcwd(), "default.txt"), 'r')
         default_string = default_file.read()
         # Storing the original seeds in the backup file as a string.
         self.seed_store = ast.literal_eval(default_string)
@@ -564,7 +565,7 @@ class MainWindow(tk.Frame):  # creates the main window
         """
         Writes the seed_store dictionary into the seeds.txt file.
         """
-        seed_file = open(str(getcwd()) + "/seeds.txt", 'w')
+        seed_file = open(join(getcwd(), "seeds.txt"), 'w')
         seed_file.write(str(self.seed_store))
         seed_file.close()
 

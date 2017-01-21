@@ -1,4 +1,4 @@
-    # Game_of_Life
+# Game of Life
 A small game written in python we made for a school project.
 This is based on Conway's game of life, with added features:
 - Addition different colors, competing against each other.
@@ -10,4 +10,3 @@ The "default" file contains a set of seeds. It should not be deleted, as it is u
 When the program is run, a "data" file will be generated. This file contains the number of tiles of each color at every iteration in the last simulation. It can be used to make plots, allowing to visualize the progress of each color through time.
 
 The code was written by Julien Dénéréaz and myself, in the context of the course "Programmation pour biologistes", at the university of Lausanne.
-
